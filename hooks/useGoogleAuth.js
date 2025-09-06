@@ -6,7 +6,8 @@ import { getAuth, GoogleAuthProvider, signInWithCredential } from 'firebase/auth
 
 WebBrowser.maybeCompleteAuthSession();
 
-const redirectUri = makeRedirectUri();
+// Use a proxy to avoid issues with underscores in the redirect URI
+const redirectUri = makeRedirectUri({ useProxy: true });
 console.log('Your redirect URI is:', redirectUri);
 
 const useGoogleAuth = (options) => {
