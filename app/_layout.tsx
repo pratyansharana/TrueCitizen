@@ -27,9 +27,9 @@ export default function RootLayout() {
   useEffect(() => {
     if (!loaded) return;
 
-    const inAuthGroup = segments[0] === '(auth)';
+    const inTabsGroup = segments[0] === '(tabs)';
 
-    if (user && !inAuthGroup) {
+    if (user && !inTabsGroup) {
       router.replace('/(tabs)/explore');
     } else if (!user) {
       router.replace('/(auth)/signin');
@@ -45,7 +45,6 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
