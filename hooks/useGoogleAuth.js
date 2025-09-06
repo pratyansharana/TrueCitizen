@@ -6,12 +6,13 @@ import { getAuth, GoogleAuthProvider, signInWithCredential } from 'firebase/auth
 
 WebBrowser.maybeCompleteAuthSession();
 
+const redirectUri = makeRedirectUri();
+console.log('Your redirect URI is:', redirectUri);
+
 const useGoogleAuth = (options) => {
   const [request, response, promptAsync] = useAuthRequest({
     clientId: options.clientId,
-    redirectUri: makeRedirectUri({
-      native: options.redirectUri,
-    }),
+    redirectUri,
     scopes: ['profile', 'email'],
   });
 

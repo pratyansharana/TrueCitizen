@@ -5,8 +5,7 @@ import useGoogleAuth from '../../hooks/useGoogleAuth';
 
 const SignInScreen = () => {
   const { promptAsync } = useGoogleAuth({
-    clientId: 'YOUR_CLIENT_ID', // Replace with your actual client ID
-    redirectUri: 'YOUR_REDIRECT_URI', // Replace with your actual redirect URI
+    clientId: '386252696662-h3predt80h2t2mtnrse8sbp635sq3f91.apps.googleusercontent.com', // Replace with your actual client ID
   });
 
   return (
